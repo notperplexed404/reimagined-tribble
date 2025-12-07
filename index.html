@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Travel Agency</title>
+  <style>
+    :root {
+      --grad-start: #cdffd8;
+      --grad-end: #94b9ff;
+      --text-dark: #222;
+      --text-light: #555;
+      --accent: #3a6cf0;
+      --radius: 24px;
+    }
+
+    body {
+      margin: 0;
+      font-family: "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      background: #fdfdfd;
+      color: var(--text-dark);
+      line-height: 1.6;
+    }
+
+    /* Global container */
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 2rem;
+    }
+
+    /* Rounded Hero Card */
+    .hero {
+      background: linear-gradient(135deg, var(--grad-start), var(--grad-end));
+      border-radius: var(--radius);
+      box-shadow: 0 12px 30px rgba(0,0,0,0.12);
+      text-align: center;
+      padding: 4rem 2rem;
+      margin-top: 3rem;
+      animation: fadeIn 1.2s ease forwards;
+    }
+
+    .hero img.logo {
+      width: clamp(120px, 18vw, 200px);
+      height: auto;
+      filter: drop-shadow(0 6px 20px rgba(0,0,0,0.08));
+      margin-bottom: 1rem;
+    }
+
+    .hero h1 {
+      font-size: clamp(2rem, 4vw, 3rem);
+      font-weight: 700;
+      margin: 0.5rem 0 0;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(40px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* Section styling */
+    section {
+      margin: 4rem 0;
+    }
+
+    h2 {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+      text-align: center;
+      color: var(--accent);
+    }
+
+    blockquote {
+      background: #f9f9f9;
+      border-left: 5px solid var(--accent);
+      padding: 1rem 1.5rem;
+      font-style: italic;
+      border-radius: 6px;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    /* FAQ Accordion */
+    .faq {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .faq-item {
+      border-bottom: 1px solid #ddd;
+    }
+
+    .faq-question {
+      cursor: pointer;
+      padding: 1rem;
+      font-weight: 600;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      transition: background 0.3s;
+    }
+
+    .faq-question:hover {
+      background: #f0f6ff;
+    }
+
+    .faq-answer {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.5s ease, padding 0.3s ease;
+      padding: 0 1rem;
+      color: var(--text-light);
+    }
+
+    .faq-item.active .faq-answer {
+      max-height: 200px;
+      padding: 1rem;
+    }
+
+    .faq-item.active .faq-question::after {
+      content: "−";
+    }
+
+    .faq-question::after {
+      content: "+";
+      font-size: 1.2rem;
+      color: var(--accent);
+    }
+
+    /* Placeholder sections */
+    .card {
+      background: #f9f9f9;
+      border-radius: var(--radius);
+      padding: 2rem;
+      text-align: center;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+      margin-top: 2rem;
+    }
+
+    .card p {
+      color: var(--text-light);
+    }
+
+    /* Footer */
+    footer {
+      text-align: center;
+      padding: 2rem;
+      font-size: 0.9rem;
+      color: var(--text-light);
+      border-top: 1px solid #eee;
+      margin-top: 4rem;
+    }
+
+      .pricing-table {
+    max-width: 1000px;
+    margin: 3rem auto;
+    padding: 2rem;
+    background: #f9f9f9;
+    border-radius: 16px;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+    font-family: "Segoe UI", Roboto, sans-serif;
+  }
+
+  .pricing-table h2 {
+    text-align: center;
+    color: #3a6cf0;
+    margin-bottom: 1rem;
+  }
+
+  .pricing-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+  }
+
+  .plan {
+    background: white;
+    border-radius: 12px;
+    padding: 1.5rem;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+    transition: transform 0.3s ease;
+  }
+
+  .plan:hover {
+    transform: translateY(-6px);
+  }
+
+  .plan h3 {
+    margin-top: 0;
+    color: #222;
+    font-size: 1.3rem;
+  }
+
+  .plan ul {
+    list-style: none;
+    padding: 0;
+    margin: 1rem 0;
+  }
+
+  .plan ul li {
+    margin: 0.5rem 0;
+    color: #555;
+  }
+
+  .total {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #3a6cf0;
+    margin-top: 1rem;
+  }
+   .testimonial {
+    max-width: 800px;
+    margin: 3rem auto;
+    padding: 0 1.5rem;
+  }
+
+  .testimonial-card {
+    display: flex;
+    align-items: flex-start;
+    gap: 1.5rem;
+    background: #fff;
+    border-radius: 16px;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+    padding: 2rem;
+    transition: transform 0.3s ease;
+  }
+
+  .testimonial-card:hover {
+    transform: translateY(-6px);
+  }
+
+  .testimonial-photo {
+    border-radius: 50%;
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  }
+
+  .testimonial-content {
+    flex: 1;
+  }
+
+  .testimonial-name {
+    margin: 0;
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #222;
+  }
+
+  .testimonial-role {
+    margin: 0.2rem 0 1rem;
+    font-size: 0.9rem;
+    color: #555;
+  }
+
+  blockquote .testemonial-content{
+    margin: 0;
+    font-style: italic;
+    color: #444;
+    line-height: 1.5;
+  }
+      /* Navbar styling */
+    nav {
+      background: #3a6cf0;
+      padding: 0.8rem 1.5rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    nav .logo {
+      color: #fff;
+      font-weight: 700;
+      font-size: 1.2rem;
+      text-decoration: none;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 1.2rem;
+      margin: 0;
+      padding: 0;
+    }
+
+    nav ul li a {
+      color: #fff;
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.3s ease;
+    }
+
+    nav ul li a:hover {
+      color: #dbe6ff;
+    }
+
+  </style>
+</head>
+<body>
+    <nav>
+    <a href="main.html" class="logo">Paper Airplane</a>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="page.html">Itenary</a></li>
+    </ul>
+  </nav>
+
+
+  <div class="container">
+    <!-- Hero -->
+    <section class="hero">
+      <img src="logo.png" alt="Site logo" class="logo" />
+      <h1>Affordable, Reliable and Adventurous</h1>
+    </section>
+
+    <!-- Why Us -->
+    <section>
+      <h2>Why Us?</h2>
+      <blockquote>
+        We ensure your trips are stress-free, meaningful, and enjoyable, handling all details like flights, hotels, transport, and tours. You can trust our clean and comfortable accommodations, and our information comes from real historians for an engaging experience. Experience authentic culture through local food, markets, and customs, guided by friendly experts who balance learning and fun. With reliable support for any queries, travel with us for a safe, <strong>smooth</strong>, and <strong>memorable adventure</strong> full of stories.
+      </blockquote>
+    </section>
+
+    <!-- FAQ -->
+    <section class="faq">
+      <h2>FAQs</h2>
+      <div class="faq-item">
+        <div class="faq-question">What packages do you offer?</div>
+        <div class="faq-answer">We provide 7-day to 10-day Itenaries and packages covered by us</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question">How does pricing work?</div>
+        <div class="faq-answer">Pricing depends on destination, duration, and inclusions.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question">Do you provide support during trips?</div>
+        <div class="faq-answer">Yes, our team is available <strong>24/7</strong> for assistance.</div>
+      </div>
+    </section>
+
+    <!-- Pricing Placeholder -->
+    <section class="card">
+        <section class="pricing-table">
+  <h2>🌄 Nepal Trip Plan (7–10 Days)</h2>
+  <p><strong>Start point:</strong> Chennai</p>
+  <p><strong>Trip Style:</strong> Affordable, complete, no major attractions missed</p>
+  <p><strong>Best time:</strong> Oct–Apr (clear skies), but Nepal is visitable year-round.</p>
+
+  <div class="pricing-grid">
+    <!-- 7-Day Plan -->
+    <div class="plan">
+      <h3>✅ 7-Day Itinerary</h3>
+      <ul>
+        <li><strong>Flights:</strong> ₹14k–₹22k (round-trip)</li>
+        <li><strong>Hotels:</strong> ₹8,400–₹14,000 (₹1,200–₹2,000 × 7 nights)</li>
+        <li><strong>Food:</strong> ₹2,800–₹4,900 (₹400–₹700 × 7 days)</li>
+        <li><strong>Entry Fees:</strong> ₹350–₹5,600 (temples/parks)</li>
+        <li><strong>Transport:</strong> Local taxis, buses, vans</li>
+      </ul>
+      <p class="total">💰 <strong>Estimated Total:</strong> ~₹26k–₹47k per person</p>
+    </div>
+
+    <!-- 10-Day Plan -->
+    <div class="plan">
+      <h3>✅ 10-Day Itinerary</h3>
+      <ul>
+        <li><strong>Flights:</strong> ₹20k–₹34k </li>
+        <li><strong>Hotels:</strong> ₹12,000–₹20,000 (₹1,200–₹2,000 × 10 nights)</li>
+        <li><strong>Food:</strong> ₹4,000–₹7,000 (₹400–₹700 × 10 days)</li>
+        <li><strong>Entry Fees:</strong> ₹500–₹8,000 (temples/parks)</li>
+        <li><strong>Transport:</strong> Premium Vans, SUV, Taxes, but in some cases Local bus </li>
+      </ul>
+      <p class="total">💰 <strong>Estimated Total:</strong> ~₹30k–₹57k per person</p>
+    </div>
+  </div>
+
+  <footer>Learn more <a href="./page.html">here</a></footer>
+</section>
+
+
+
+    </section>
+
+    <!-- Testimonials Placeholder -->
+    <section class="card">
+      <h2>Testimonials</h2>
+      <section class="testimonial">
+<div class="testimonial-card">
+    <img src="./7856668.png" alt="Customer photo" class="testimonial-photo" />
+    <div class="testimonial-content">
+      <h3 class="testimonial-name">Priya S.</h3>
+      <p class="testimonial-role">Traveler from Karnataka</p>
+      <blockquote class="testemonial-content">
+        “The Nepal trip was perfectly organized. Affordable, stress-free, and full of authentic experiences. I felt safe and supported throughout — highly recommend!”
+      </blockquote>
+    </div>
+  </div>
+  <br>
+  <div class="testimonial-card">
+    <img src="./7856668.png" alt="Customer photo" class="testimonial-photo" />
+    <div class="testimonial-content">
+      <h3 class="testimonial-name">Gomathi</h3>
+      <p class="testimonial-role">Traveler from Chennai</p>
+      <blockquote class="testemonial-content">
+        “இந்த பயணம் அற்புதமாக இருந்தது! 10/10 எந்த நாளும். நான் என் முழு வாழ்நாளிலும் இந்த வாய்ப்புக்காக காத்திருந்தேன், இப்போது இது எனக்கு கிடைத்தது! 👏”
+      </blockquote>
+    </div>
+  </div>
+  <br>
+   <div class="testimonial-card">
+    <img src="./7856668.png" alt="Customer photo" class="testimonial-photo" />
+    <div class="testimonial-content">
+      <h3 class="testimonial-name">Arman</h3>
+      <p class="testimonial-role">Traveler from Mumbai</p>
+      <blockquote class="testemonial-content">
+        “मैं हमेशा नेपाल जाना चाहता था, और पेपर एयरप्लेन इसे अच्छा और सुरक्षित तरीके से प्रदान करता है! सुपर 😍”
+      </blockquote>
+    </div>
+  </div>
+</section>
+
+
+    </section>
+
+    <!-- Footer -->
+    <footer>
+      © 2025 Paper Airplane, EDUCATIONAL PURPOUSES ONLY
+    </footer>
+  </div>
+
+  <script>
+    // FAQ accordion logic
+    document.querySelectorAll('.faq-question').forEach(q => {
+      q.addEventListener('click', () => {
+        const item = q.parentElement;
+        item.classList.toggle('active');
+      });
+    });
+  </script>
+</body>
+<script type="module" src="/main.js"></script>
+</html>

@@ -1,0 +1,683 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Nepal Trip Itinerary — 7–10 Days</title>
+  <meta name="description" content="Professional, budget-friendly Nepal itinerary from Chennai with 7-day and 10-day options, costs, highlights, and daily plan." />
+  <style>
+    :root {
+      --grad-start: #cdffd8;
+      --grad-end: #94b9ff;
+      --bg: #f7f9fc;
+      --card: #ffffff;
+      --text: #1e2430;
+      --muted: #5b667a;
+      --accent: #3a6cf0;
+      --accent-2: #0f9d58;
+      --radius-lg: 24px;
+      --radius: 14px;
+      --shadow-1: 0 8px 24px rgba(16, 24, 40, 0.08);
+      --shadow-2: 0 12px 30px rgba(16, 24, 40, 0.12);
+    }
+
+    /* Base */
+    html, body {
+      height: 100%;
+    }
+    body {
+      margin: 0;
+      font-family: "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      color: var(--text);
+      background: var(--bg);
+      line-height: 1.6;
+    }
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 2rem 1.5rem;
+    }
+    h1, h2, h3 {
+      margin: 0;
+    }
+    a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    /* Rounded hero banner */
+    .hero {
+      background: linear-gradient(135deg, var(--grad-start), var(--grad-end));
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow-2);
+      padding: 3.5rem 2rem;
+      text-align: center;
+      margin-top: 2rem;
+      position: relative;
+      overflow: hidden;
+      isolation: isolate;
+      animation: fadeIn 0.8s ease-out both;
+    }
+    .hero::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(1200px 400px at 80% -10%, rgba(255,255,255,0.35), rgba(255,255,255,0) 60%);
+      z-index: -1;
+    }
+    .hero .logo {
+      width: clamp(120px, 16vw, 180px);
+      height: auto;
+      display: block;
+      margin: 0 auto 1rem;
+      filter: drop-shadow(0 10px 24px rgba(0,0,0,0.12));
+    }
+    .hero h1 {
+      font-size: clamp(2rem, 5vw, 3rem);
+      font-weight: 800;
+      letter-spacing: 0.2px;
+    }
+    .hero p {
+      max-width: 850px;
+      margin: 0.75rem auto 0;
+      color: #18202f;
+      font-weight: 500;
+    }
+    .hero .tags {
+      margin-top: 1rem;
+      display: flex;
+      gap: 0.5rem;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+    .tag {
+      background: rgba(255,255,255,0.9);
+      color: #1a2742;
+      border: 1px solid rgba(0,0,0,0.06);
+      padding: 0.4rem 0.7rem;
+      border-radius: 999px;
+      font-size: 0.9rem;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+    }
+
+    /* Info row (travel + quick costs) */
+    .info-row {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1rem;
+      margin-top: 2rem;
+    }
+    .info-card {
+      background: var(--card);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow-1);
+      padding: 1.25rem 1rem;
+    }
+    .info-card h3 {
+      font-size: 1.1rem;
+      color: var(--accent);
+      margin-bottom: 0.4rem;
+      font-weight: 700;
+    }
+    .info-card p, .info-card ul {
+      color: var(--muted);
+      margin: 0.25rem 0;
+      padding-left: 1.1rem;
+    }
+    .info-card ul {
+      list-style: disc;
+    }
+
+    /* Section headings */
+    .section {
+      margin-top: 2.5rem;
+    }
+    .section h2 {
+      font-size: 1.8rem;
+      text-align: center;
+      color: var(--accent);
+      margin-bottom: 0.75rem;
+    }
+    .section .sub {
+      text-align: center;
+      color: var(--muted);
+      margin-bottom: 1.2rem;
+    }
+
+    /* Pricing grid */
+    .pricing-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.2rem;
+    }
+    .plan {
+      background: var(--card);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow-1);
+      padding: 1.5rem;
+      transition: transform 0.25s ease;
+    }
+    .plan:hover {
+      transform: translateY(-4px);
+    }
+    .plan h3 {
+      font-size: 1.2rem;
+      margin-bottom: 0.6rem;
+      color: #222;
+    }
+    .plan ul {
+      list-style: none;
+      padding: 0;
+      margin: 0.4rem 0;
+    }
+    .plan li {
+      color: var(--muted);
+      margin: 0.4rem 0;
+    }
+    .total {
+      margin-top: 0.8rem;
+      color: var(--accent);
+      font-weight: 700;
+    }
+
+    /* Itinerary accordion */
+    .accordion {
+      max-width: 900px;
+      margin: 0 auto;
+    }
+    .accordion-group {
+      background: var(--card);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow-1);
+      overflow: hidden;
+      margin-bottom: 1rem;
+    }
+    .accordion-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      padding: 1rem 1.2rem;
+      cursor: pointer;
+      background: #fff;
+    }
+    .accordion-title {
+      font-weight: 700;
+    }
+    .accordion-badge {
+      background: #eef4ff;
+      color: var(--accent);
+      font-weight: 600;
+      border: 1px solid #dbe6ff;
+      padding: 0.2rem 0.6rem;
+      border-radius: 999px;
+      font-size: 0.85rem;
+    }
+    .accordion-icon {
+      color: var(--accent);
+      font-weight: 900;
+      font-size: 1.2rem;
+      user-select: none;
+    }
+    .accordion-content {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.45s ease, padding 0.25s ease;
+      padding: 0 1.2rem;
+      background: #fcfdff;
+      border-top: 1px solid #f0f2f7;
+    }
+    .accordion-content-inner {
+      padding: 0.8rem 0 1rem;
+      color: var(--muted);
+    }
+    .accordion-group.active .accordion-content {
+      max-height: 600px;
+      padding: 0.6rem 1.2rem 1rem;
+    }
+
+    /* Lists and callouts inside itinerary */
+    .list {
+      margin: 0.6rem 0;
+      padding-left: 1.1rem;
+    }
+    .list li {
+      margin: 0.25rem 0;
+    }
+    .callout {
+      background: #f2fbf6;
+      border: 1px solid #d7f3e2;
+      color: #265c35;
+      border-radius: 10px;
+      padding: 0.6rem 0.8rem;
+      margin: 0.6rem 0;
+      font-size: 0.95rem;
+    }
+
+    /* Highlights grid */
+    .highlights {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 0.8rem;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+    .highlight {
+      background: var(--card);
+      border-radius: 12px;
+      box-shadow: var(--shadow-1);
+      padding: 0.9rem 1rem;
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      color: var(--muted);
+    }
+    .dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: var(--accent-2);
+      box-shadow: 0 0 0 4px #e7f6ef;
+      flex: 0 0 10px;
+    }
+
+    /* Footer cost */
+    .footer-card {
+      background: var(--card);
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow-2);
+      padding: 1.4rem 1.2rem;
+      max-width: 900px;
+      margin: 1.5rem auto 3rem;
+    }
+    .footer-card h3 {
+      color: var(--accent);
+      margin-bottom: 0.6rem;
+    }
+    .grid-2 {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 0.8rem;
+    }
+    .muted {
+      color: var(--muted);
+    }
+
+    /* Animations */
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(24px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+       /* Navbar styling */
+    nav {
+      background: #3a6cf0;
+      padding: 0.8rem 1.5rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    nav .logo {
+      color: #fff;
+      font-weight: 700;
+      font-size: 1.2rem;
+      text-decoration: none;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 1.2rem;
+      margin: 0;
+      padding: 0;
+    }
+
+    nav ul li a {
+      color: #fff;
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.3s ease;
+    }
+
+    nav ul li a:hover {
+      color: #dbe6ff;
+    }
+
+  </style>
+</head>
+<body>
+    <nav>
+    <a href="main.html" class="logo">Paper Airplane</a>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="page.html">Itenary</a></li>
+    </ul>
+  </nav>
+  <div class="container">
+    <!-- Hero -->
+    <section class="hero">
+      <img src="logo.png" alt="Travel logo" class="logo" />
+      <h1>Nepal Trip Plan (7–10 Days)</h1>
+      <p>Affordable, complete, and scenic. Start from Chennai and cover all major highlights without missing the essentials.</p>
+      <div class="tags">
+        <span class="tag">Start: Chennai</span>
+        <span class="tag">Best time: Oct–Apr</span>
+        <span class="tag">Family-friendly</span>
+        <span class="tag">Budget-focused</span>
+      </div>
+    </section>
+
+    <!-- Travel info + quick budget -->
+    <div class="info-row">
+      <div class="info-card">
+        <h3>Step 1: Travel from Chennai to Nepal</h3>
+        <ul>
+          <li>Chennai → Delhi → Kathmandu (Air India/IndiGo)</li>
+          <li>Chennai → Kolkata → Kathmandu</li>
+        </ul>
+        <p class="muted">Direct Chennai–Kathmandu flights are rare; a one-stop is normal and affordable.</p>
+        <p><strong>Expected round-trip:</strong> ₹14k–₹22k pp (with pre-booking)</p>
+      </div>
+      <div class="info-card">
+        <h3>Budget to plan for (per day)</h3>
+        <ul>
+          <li>Hotels: ₹1,200–₹2,000 (clean budget stay)</li>
+          <li>Food: ₹400–₹700</li>
+          <li>Entry fees: ₹50–₹800 (temples/parks)</li>
+          <li>Transport: Local taxis, buses, tourist vans</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Pricing -->
+    <section class="section">
+      <h2>Pricing overview</h2>
+      <p class="sub">Transparent ranges for flights, stay, food, and activities — scale to 7 or 10 days.</p>
+      <div class="pricing-grid">
+        <div class="plan">
+          <h3>✅ 7-Day Itinerary</h3>
+          <ul>
+            <li><strong>Flights:</strong> ₹14k–₹22k (round-trip)</li>
+            <li><strong>Hotels:</strong> ₹8,400–₹14,000 (₹1,200–₹2,000 × 7 nights)</li>
+            <li><strong>Food:</strong> ₹2,800–₹4,900 (₹400–₹700 × 7 days)</li>
+            <li><strong>Entry Fees:</strong> ₹350–₹5,600 (temples/parks)</li>
+            <li><strong>Transport:</strong> Local taxis, buses, vans</li>
+          </ul>
+          <p class="total">Estimated: ~₹26k–₹47k pp</p>
+        </div>
+        <div class="plan">
+          <h3>✅ 10-Day Itinerary</h3>
+          <ul>
+            <li><strong>Flights:</strong> ₹14k–₹22k (same as 7-day)</li>
+            <li><strong>Hotels:</strong> ₹12,000–₹20,000 (₹1,200–₹2,000 × 10 nights)</li>
+            <li><strong>Food:</strong> ₹4,000–₹7,000 (₹400–₹700 × 10 days)</li>
+            <li><strong>Entry Fees:</strong> ₹500–₹8,000 (temples/parks)</li>
+            <li><strong>Transport:</strong> Local taxis, buses, vans</li>
+          </ul>
+          <p class="total">Estimated: ~₹30k–₹57k pp</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Itinerary: 7-day -->
+    <section class="section">
+      <h2>7-Day Itinerary (short but covers all key places)</h2>
+      <div class="accordion">
+        <!-- Day 1 -->
+        <div class="accordion-group">
+          <div class="accordion-header">
+            <div class="accordion-title">Day 1 — Arrive Kathmandu</div>
+            <span class="accordion-badge">Thamel check-in</span>
+            <div class="accordion-icon">+</div>
+          </div>
+          <div class="accordion-content">
+            <div class="accordion-content-inner">
+              <ul class="list">
+                <li>Check-in at Thamel (best area for tourists)</li>
+              </ul>
+              <p><strong>Visit:</strong></p>
+              <ul class="list">
+                <li>Garden of Dreams</li>
+                <li>Thamel Night Market (safe, touristy)</li>
+              </ul>
+              <p><strong>Try:</strong> Momo, sel roti, thukpa</p>
+            </div>
+          </div>
+        </div>
+        <!-- Day 2 -->
+        <div class="accordion-group">
+          <div class="accordion-header">
+            <div class="accordion-title">Day 2 — Kathmandu Cultural Day</div>
+            <span class="accordion-badge">Temples & heritage</span>
+            <div class="accordion-icon">+</div>
+          </div>
+          <div class="accordion-content">
+            <div class="accordion-content-inner">
+              <ul class="list">
+                <li>Pashupatinath Temple</li>
+                <li>Boudhanath Stupa</li>
+                <li>Swayambhunath (Monkey Temple)</li>
+                <li>Kathmandu Durbar Square</li>
+              </ul>
+              <div class="callout">Affordable combo taxi day (₹1,200–₹1,800 for family)</div>
+            </div>
+          </div>
+        </div>
+        <!-- Day 3 -->
+        <div class="accordion-group">
+          <div class="accordion-header">
+            <div class="accordion-title">Day 3 — Drive to Pokhara (6 hrs)</div>
+            <span class="accordion-badge">Scenic transfer</span>
+            <div class="accordion-icon">+</div>
+          </div>
+          <div class="accordion-content">
+            <div class="accordion-content-inner">
+              <p><strong>Budget option:</strong> Tourist AC bus (₹800–₹1,200)</p>
+              <p><strong>Evening:</strong></p>
+              <ul class="list">
+                <li>Lakeside walk</li>
+                <li>Boating at Phewa Lake</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <!-- Day 4 -->
+        <div class="accordion-group">
+          <div class="accordion-header">
+            <div class="accordion-title">Day 4 — Pokhara Adventure Day</div>
+            <span class="accordion-badge">Sunrise & sights</span>
+            <div class="accordion-icon">+</div>
+          </div>
+          <div class="accordion-content">
+            <div class="accordion-content-inner">
+              <p><strong>Morning:</strong></p>
+              <ul class="list">
+                <li>Sunrise at <em>Sarangkot</em> (super famous view)</li>
+                <li>Paragliding optional (₹4,000–₹5,000 — skip if too expensive)</li>
+              </ul>
+              <p><strong>Afternoon:</strong></p>
+              <ul class="list">
+                <li>Davis Falls</li>
+                <li>Gupteshwor Cave</li>
+                <li>International Mountain Museum</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <!-- Day 5 -->
+        <div class="accordion-group">
+          <div class="accordion-header">
+            <div class="accordion-title">Day 5 — Pokhara to Chitwan (4–5 hrs)</div>
+            <span class="accordion-badge">Jungle lodge</span>
+            <div class="accordion-icon">+</div>
+          </div>
+          <div class="accordion-content">
+            <div class="accordion-content-inner">
+              <p>Check-in to a budget jungle lodge.</p>
+              <ul class="list">
+                <li>Evening cultural Tharu dance show</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <!-- Day 6 -->
+        <div class="accordion-group">
+          <div class="accordion-header">
+            <div class="accordion-title">Day 6 — Chitwan Jungle Safari</div>
+            <span class="accordion-badge">Wildlife</span>
+            <div class="accordion-icon">+</div>
+          </div>
+          <div class="accordion-content">
+            <div class="accordion-content-inner">
+              <ul class="list">
+                <li>Jeep Safari</li>
+                <li>Elephant Breeding Center</li>
+                <li>Canoe ride (safe guided)</li>
+                <li>Bird watching</li>
+              </ul>
+              <p>Return to Kathmandu in the evening by bus.</p>
+            </div>
+          </div>
+        </div>
+        <!-- Day 7 -->
+        <div class="accordion-group">
+          <div class="accordion-header">
+            <div class="accordion-title">Day 7 — Fly Back</div>
+            <span class="accordion-badge">Departure</span>
+            <div class="accordion-icon">+</div>
+          </div>
+          <div class="accordion-content">
+            <div class="accordion-content-inner">
+              <p>Shopping at Thamel → Airport.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Itinerary: 10-day add-ons -->
+    <section class="section">
+      <h2>10-Day Itinerary (if you want everything)</h2>
+      <p class="sub">Same as the 7-day plan, plus these add-ons:</p>
+      <div class="accordion">
+        <!-- Day 8 -->
+        <div class="accordion-group">
+          <div class="accordion-header">
+            <div class="accordion-title">Day 8 — Nagarkot Hill Station</div>
+            <span class="accordion-badge">Sunrise stay</span>
+            <div class="accordion-icon">+</div>
+          </div>
+          <div class="accordion-content">
+            <div class="accordion-content-inner">
+              <ul class="list">
+                <li>Drive 1.5 hr from Kathmandu</li>
+                <li>Best sunrise spot in Nepal</li>
+                <li>Stay overnight to see the Himalayas from the balcony</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <!-- Day 9 -->
+        <div class="accordion-group">
+          <div class="accordion-header">
+            <div class="accordion-title">Day 9 — Bhaktapur + Patan</div>
+            <span class="accordion-badge">Heritage</span>
+            <div class="accordion-icon">+</div>
+          </div>
+          <div class="accordion-content">
+            <div class="accordion-content-inner">
+              <ul class="list">
+                <li>Bhaktapur Durbar Square</li>
+                <li>Pottery Square (you can try making pottery!)</li>
+                <li>Patan Museum</li>
+                <li>Golden Temple</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <!-- Day 10 -->
+        <div class="accordion-group">
+          <div class="accordion-header">
+            <div class="accordion-title">Day 10 — Leisure + Fly Back</div>
+            <span class="accordion-badge">Wrap-up</span>
+            <div class="accordion-icon">+</div>
+          </div>
+          <div class="accordion-content">
+            <div class="accordion-content-inner">
+              <ul class="list">
+                <li>Café hopping in Thamel</li>
+                <li>Souvenirs</li>
+                <li>Return flight to Chennai</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Highlights -->
+    <section class="section">
+      <h2>What not to miss</h2>
+      <div class="highlights">
+        <div class="highlight"><span class="dot"></span> Pashupatinath Temple</div>
+        <div class="highlight"><span class="dot"></span> Swayambhunath (Monkey Temple)</div>
+        <div class="highlight"><span class="dot"></span> Boudhanath Stupa</div>
+        <div class="highlight"><span class="dot"></span> Pokhara + Sarangkot sunrise</div>
+        <div class="highlight"><span class="dot"></span> Fewa Lake boating</div>
+        <div class="highlight"><span class="dot"></span> Chitwan Jungle Safari</div>
+        <div class="highlight"><span class="dot"></span> Bhaktapur + Patan</div>
+        <div class="highlight"><span class="dot"></span> Momos, Thakali Thali</div>
+        <div class="highlight"><span class="dot"></span> Optional: Paragliding / Nagarkot sunrise</div>
+      </div>
+    </section>
+
+    <!-- Total cost -->
+    <section class="footer-card">
+      <h3>Approx total cost per person (7–10 days)</h3>
+      <div class="grid-2">
+        <div>
+          <ul class="list muted">
+            <li>Flights: ₹14k–₹22k</li>
+            <li>Hotels: ₹8k–₹15k (7–10 nights)</li>
+            <li>Food: ₹3k–₹6k</li>
+          </ul>
+        </div>
+        <div>
+          <ul class="list muted">
+            <li>Internal travel: ₹4k–₹6k</li>
+            <li>Entry fees + activities: ₹2k–₹5k</li>
+            <li><strong>Total:</strong> ≈ ₹30k–₹45k pp (family sharing = cheaper)</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <script>
+    // Accordion interactions
+    document.querySelectorAll('.accordion-group').forEach(group => {
+      const header = group.querySelector('.accordion-header');
+      const icon = group.querySelector('.accordion-icon');
+      header.addEventListener('click', () => {
+        const isActive = group.classList.contains('active');
+        // Close others in same accordion
+        const parentAccordion = group.parentElement;
+        parentAccordion.querySelectorAll('.accordion-group').forEach(g => {
+          g.classList.remove('active');
+          const i = g.querySelector('.accordion-icon');
+          if (i) i.textContent = '+';
+        });
+        // Toggle current
+        if (!isActive) {
+          group.classList.add('active');
+          icon.textContent = '−';
+        } else {
+          group.classList.remove('active');
+          icon.textContent = '+';
+        }
+      });
+    });
+  </script>
+</body>
+<script type="module" src="/main.js"></script>
+</html>
