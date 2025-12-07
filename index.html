@@ -209,58 +209,84 @@
     color: #3a6cf0;
     margin-top: 1rem;
   }
-   .testimonial {
-    max-width: 800px;
-    margin: 3rem auto;
-    padding: 0 1.5rem;
-  }
+      .testimonial-section {
+      max-width: 1000px;
+      margin: 2rem auto;
+      overflow: hidden;
+      position: relative;
+      border-radius: 16px;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+      background: #fff;
+      padding: 1rem;
+    }
 
-  .testimonial-card {
-    display: flex;
-    align-items: flex-start;
-    gap: 1.5rem;
-    background: #fff;
+      #testimonials h2 {
+    text-align: center;
+    color: var(--accent);
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+  }
+  .carousel-container {
+    max-width: 900px;
+    margin: 0 auto;
+    position: relative;
+    overflow: hidden;
     border-radius: 16px;
     box-shadow: 0 8px 24px rgba(0,0,0,0.08);
-    padding: 2rem;
-    transition: transform 0.3s ease;
+    background: #fff;
+    padding: 1rem;
   }
-
-  .testimonial-card:hover {
-    transform: translateY(-6px);
+  .carousel-track {
+    display: flex;
+    transition: transform 0.5s ease;
   }
-
+  .testimonial-card {
+    flex: 0 0 100%;
+    box-sizing: border-box;
+    padding: 1.5rem;
+    text-align: center;
+  }
   .testimonial-photo {
+    width: 60px;
+    height: 60px;
     border-radius: 50%;
-    width: 80px;
-    height: 80px;
     object-fit: cover;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    margin-bottom: 0.5rem;
   }
-
-  .testimonial-content {
-    flex: 1;
-  }
-
   .testimonial-name {
-    margin: 0;
-    font-size: 1.2rem;
-    font-weight: 600;
-    color: #222;
+    margin: 0.2rem 0;
+    font-weight: 700;
+    color: #3a6cf0;
   }
-
   .testimonial-role {
-    margin: 0.2rem 0 1rem;
-    font-size: 0.9rem;
-    color: #555;
-  }
-
-  blockquote .testemonial-content{
     margin: 0;
-    font-style: italic;
-    color: #444;
-    line-height: 1.5;
+    font-size: 0.9rem;
+    color: #5b667a;
   }
+  blockquote {
+    margin: 0.8rem 0 0;
+    font-style: italic;
+    color: #1e2430;
+  }
+  .carousel-button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(58,108,240,0.9);
+    border: none;
+    color: #fff;
+    font-size: 1.2rem;
+    padding: 0.6rem 1rem;
+    cursor: pointer;
+    border-radius: 50%;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+  }
+  .carousel-button:hover {
+    background: #2a4ecf;
+  }
+  .carousel-button.prev { left: 10px; }
+  .carousel-button.next { right: 10px; }
+
       /* Navbar styling */
     nav {
       background: #3a6cf0;
@@ -295,7 +321,7 @@
     nav ul li a:hover {
       color: #dbe6ff;
     }
-
+   
   </style>
 </head>
 <body>
@@ -388,43 +414,51 @@
     <!-- Testimonials Placeholder -->
     <section class="card">
       <h2>Testimonials</h2>
-      <section class="testimonial">
-<div class="testimonial-card">
-    <img src="./7856668.png" alt="Customer photo" class="testimonial-photo" />
-    <div class="testimonial-content">
-      <h3 class="testimonial-name">Priya S.</h3>
-      <p class="testimonial-role">Traveler from Karnataka</p>
-      <blockquote class="testemonial-content">
-        “The Nepal trip was perfectly organized. Affordable, stress-free, and full of authentic experiences. I felt safe and supported throughout — highly recommend!”
-      </blockquote>
+       <section class="testimonial-section">
+    <div class="testimonial-track">
+      <!-- Repeat testimonials so the loop looks continuous -->
+     
+    <!-- Testimonials Section -->
+<section id="testimonials" class="testimonial-section">
+  <h2>💬 What Travelers Say</h2>
+  <div class="carousel-container">
+    <div class="carousel-track">
+
+      <!-- Testimonial 2 -->
+      <div class="testimonial-card">
+        <img src="./7856668.png" alt="Customer photo" class="testimonial-photo" />
+        <h3 class="testimonial-name">Gomathi</h3>
+        <p class="testimonial-role">Traveler from Chennai</p>
+        <blockquote>
+          “இந்த பயணம் அற்புதமாக இருந்தது! 10/10 எந்த நாளும். 👏”
+        </blockquote>
+      </div>
+      <!-- Testimonial 3 -->
+      <div class="testimonial-card">
+        <img src="./7856668.png" alt="Customer photo" class="testimonial-photo" />
+        <h3 class="testimonial-name">Arman</h3>
+        <p class="testimonial-role">Traveler from Mumbai</p>
+        <blockquote>
+          “मैं हमेशा नेपाल जाना चाहता था, और पेपर एयरप्लेन इसे अच्छा और सुरक्षित तरीके से प्रदान करता है!”
+        </blockquote>
+      </div>
+      <!-- Testimonial 4 -->
+      <div class="testimonial-card">
+        <img src="./7856668.png" alt="Customer photo" class="testimonial-photo" />
+        <h3 class="testimonial-name">Sita</h3>
+        <p class="testimonial-role">Traveler (location anonymized)</p>
+        <blockquote>
+          “This Malaysia trip gave me a WHOLE different side to the story. Absolute honesty and great work!”
+        </blockquote>
+      </div>
     </div>
-  </div>
-  <br>
-  <div class="testimonial-card">
-    <img src="./7856668.png" alt="Customer photo" class="testimonial-photo" />
-    <div class="testimonial-content">
-      <h3 class="testimonial-name">Gomathi</h3>
-      <p class="testimonial-role">Traveler from Chennai</p>
-      <blockquote class="testemonial-content">
-        “இந்த பயணம் அற்புதமாக இருந்தது! 10/10 எந்த நாளும். நான் என் முழு வாழ்நாளிலும் இந்த வாய்ப்புக்காக காத்திருந்தேன், இப்போது இது எனக்கு கிடைத்தது! 👏”
-      </blockquote>
-    </div>
-  </div>
-  <br>
-   <div class="testimonial-card">
-    <img src="./7856668.png" alt="Customer photo" class="testimonial-photo" />
-    <div class="testimonial-content">
-      <h3 class="testimonial-name">Arman</h3>
-      <p class="testimonial-role">Traveler from Mumbai</p>
-      <blockquote class="testemonial-content">
-        “मैं हमेशा नेपाल जाना चाहता था, और पेपर एयरप्लेन इसे अच्छा और सुरक्षित तरीके से प्रदान करता है! सुपर 😍”
-      </blockquote>
-    </div>
+    <button class="carousel-button prev">&#10094;</button>
+    <button class="carousel-button next">&#10095;</button>
   </div>
 </section>
 
 
-    </section>
+
 
     <!-- Footer -->
     <footer>
@@ -440,8 +474,28 @@
         item.classList.toggle('active');
       });
     });
+    const track = document.querySelector('.carousel-track');
+  const cards = Array.from(track.children);
+  const prevButton = document.querySelector('.carousel-button.prev');
+  const nextButton = document.querySelector('.carousel-button.next');
+  let currentIndex = 0;
+
+  function updateCarousel() {
+    const width = cards[0].getBoundingClientRect().width;
+    track.style.transform = `translateX(-${currentIndex * width}px)`;
+  }
+
+  nextButton.addEventListener('click', () => {
+    currentIndex = (currentIndex + 1) % cards.length;
+    updateCarousel();
+  });
+
+  prevButton.addEventListener('click', () => {
+    currentIndex = (currentIndex - 1 + cards.length) % cards.length;
+    updateCarousel();
+  });
+
+  window.addEventListener('resize', updateCarousel);
   </script>
 </body>
-
 </html>
-
