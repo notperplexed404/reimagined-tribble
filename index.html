@@ -321,16 +321,99 @@
     nav ul li a:hover {
       color: #dbe6ff;
     }
-   
+   /* ===== SWATCH ===== */
+#theme-swatch {
+  position: fixed;
+  top: 12px;
+  right: 20px;
+  width: 50px;
+  height: 50px;
+  border-radius: 999px;
+  border: none;
+  cursor: pointer;
+  background: linear-gradient(135deg, #3a6cf0, #2a54d9);
+  color: white;
+  font-size: 18px;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.18);
+  transition: transform 0.25s ease, background 0.4s ease;
+  z-index: 9999; /* important */
+}
+
+/* hover preview */
+#theme-swatch:hover {
+  transform: scale(1.1);
+}
+
+/* Mobile: center in top bar */
+@media (max-width: 640px) {
+  #theme-swatch {
+    left: 50%;
+    right: auto;
+    transform: translateX(-50%);
+  }
+}
+
+/* Dark swatch */
+body.dark #theme-swatch {
+  background: linear-gradient(135deg, #0f9d58, #0b8a47);
+}
+
+/* ===== STARS ===== */
+#stars {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 9998;
+  opacity: 0;
+  transition: opacity 1s ease;
+}
+
+body.dark #stars {
+  opacity: 1;
+}
+
+.star {
+  position: absolute;
+  width: 2px;
+  height: 2px;
+  background: white;
+  border-radius: 50%;
+  opacity: 0.3;
+  animation: twinkle 2s infinite alternate;
+}
+
+@keyframes twinkle {
+  from { opacity: 0.2; }
+  to { opacity: 1; }
+}
+
+/* ===== THEME ===== */
+body {
+  transition: background 0.7s ease, color 0.7s ease;
+}
+
+body.dark {
+  background: #0d0d1a;
+  color: #f7f9fc;
+}
+
   </style>
 </head>
 <body>
+    <!-- Theme toggle swatch -->
+<button id="theme-swatch" aria-label="Toggle dark mode">
+  <span id="theme-icon">☀️</span>
+</button>
+
+<!-- Stars -->
+<div id="stars"></div>
     <nav>
     <a href="main.html" class="logo">Paper Airplane</a>
     <ul>
       <li><a href="index.html">Home</a></li>
       <li><a href="page.html">Itenary</a></li>
       
+      <li><a href="./maldives.html">Itinerary (Maldives)</a></li>
       <li><a href="./maylasia.html">Itenerary (For Malaysia)</a></li>
     </ul>
   </nav>
@@ -467,6 +550,29 @@
   </div>
 
   <script>
+    const swatch = document.getElementById("theme-swatch");
+  const icon = document.getElementById("theme-icon");
+  const stars = document.getElementById("stars");
+
+  // create stars
+  for (let i = 0; i < 80; i++) {
+    const star = document.createElement("div");
+    star.className = "star";
+    star.style.top = Math.random() * 100 + "%";
+    star.style.left = Math.random() * 100 + "%";
+    star.style.animationDuration = (1 + Math.random() * 2) + "s";
+    stars.appendChild(star);
+  }
+
+  // toggle
+  swatch.addEventListener("click", () => {
+    document.body.classList.toggle("dark");
+    icon.textContent = document.body.classList.contains("dark")
+      ? "🌙"
+      : "☀️";
+  });
+
+  
     // FAQ accordion logic
     document.querySelectorAll('.faq-question').forEach(q => {
       q.addEventListener('click', () => {
