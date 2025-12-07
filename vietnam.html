@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Vietnam Trip Itinerary — 7–9 Days</title>
+
+<meta name="description" content="Affordable and safe Vietnam travel itinerary from India with culture, food, history, nature, and beaches under ₹1L." />
+
+<style>
+/* (STYLES UNCHANGED — EXACTLY AS YOU SENT) */
+:root{
+  --grad-start:#cdffd8;
+  --grad-end:#94b9ff;
+  --bg:#f7f9fc;
+  --card:#ffffff;
+  --text:#1e2430;
+  --muted:#5b667a;
+  --accent:#3a6cf0;
+  --accent-2:#0f9d58;
+  --radius-lg:24px;
+  --radius:14px;
+  --shadow-1:0 8px 24px rgba(16,24,40,.08);
+  --shadow-2:0 12px 30px rgba(16,24,40,.12);
+}
+body{
+  margin:0;
+  font-family:"Segoe UI",Roboto,Arial,sans-serif;
+  background:var(--bg);
+  color:var(--text);
+  line-height:1.6;
+}
+.dot{
+  display:inline-block;
+  border-radius:50%;
+  background:var(--accent-2);
+  box-shadow:0 0 0 4px #e7f6ef;
+  min-width:10px;
+  min-height:10px;
+}
+.container{max-width:1100px;margin:0 auto;padding:2rem 1.5rem}
+h1,h2,h3{margin:0}
+/* navbar */
+nav{background:#3a6cf0;padding:.8rem 1.5rem;display:flex;justify-content:space-between;align-items:center}
+nav .logo{color:#fff;font-weight:700;text-decoration:none}
+nav ul{list-style:none;display:flex;gap:1.2rem;margin:0;padding:0}
+nav a{color:#fff;text-decoration:none}
+/* hero */
+    /* Rounded hero banner */
+.hero {
+    background: linear-gradient(135deg, var(--grad-start), var(--grad-end));
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-2);
+    padding: 3.5rem 2rem;
+    text-align: center;
+    margin-top: 2rem;
+    position: relative;
+    overflow: hidden;
+    isolation: isolate;
+    animation: fadeIn 0.8s ease-out both;
+}
+ @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(40px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+.hero::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(1200px 400px at 80% -10%, rgba(255,255,255,0.35), rgba(255,255,255,0) 60%);
+      z-index: -1;
+}
+.hero .logo {
+    width: clamp(120px, 16vw, 180px);
+    height: auto;
+    display: block;
+    margin: 0 auto 1rem;
+    filter: drop-shadow(0 10px 24px rgba(0,0,0,0.12));
+}
+.hero h1{font-size:clamp(2rem,4vw,3rem);font-weight:800}
+.hero p{max-width:800px;margin:.8rem auto 0}
+.tags{margin-top:1rem;display:flex;gap:.5rem;justify-content:center;flex-wrap:wrap}
+.tag{background:white;padding:.4rem .7rem;border-radius:999px;font-size:.9rem;box-shadow:var(--shadow-1)}
+/* info */
+.info-row{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1rem;margin-top:2rem}
+.info-card{background:var(--card);border-radius:var(--radius);box-shadow:var(--shadow-1);padding:1.2rem}
+.info-card h3{color:var(--accent)}
+.info-card li,.muted{color:var(--muted)}
+/* sections */
+.section{margin-top:3rem}
+.section h2{text-align:center;color:var(--accent)}
+.section .sub{text-align:center;color:var(--muted)}
+/* accordion */
+.accordion{max-width:900px;margin:0 auto}
+.accordion-group{
+  background:var(--card);
+  border-radius:var(--radius);
+  box-shadow:var(--shadow-1);
+  margin-bottom:1rem;
+  overflow:hidden
+}
+.accordion-header{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:1rem 1.2rem;
+  cursor:pointer
+}
+.accordion-title{font-weight:700}
+.accordion-badge{
+  background:#eef4ff;
+  color:var(--accent);
+  padding:.2rem .6rem;
+  border-radius:999px;
+  font-size:.85rem
+}
+.accordion-icon{font-size:1.2rem;font-weight:900}
+.accordion-content{
+  max-height:0;
+  overflow:hidden;
+  transition:max-height .45s ease,padding .3s ease;
+  padding:0 1.2rem
+}
+.accordion-content-inner{padding:.8rem 0 1rem;color:var(--muted)}
+.accordion-group.active .accordion-content{
+  max-height:600px;
+  padding:.6rem 1.2rem 1rem
+}
+/* highlights */
+.highlights{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:.6rem}
+.highlight{
+  background:var(--card);
+  padding:.8rem 1rem;
+  border-radius:12px;
+  box-shadow:var(--shadow-1);
+  color:var(--muted)
+}
+/* footer */
+.footer-card{
+  background:var(--card);
+  border-radius:var(--radius-lg);
+  box-shadow:var(--shadow-2);
+  padding:1.4rem;
+  margin:2rem auto;
+  max-width:900px
+}
+</style>
+</head>
+
+<body>
+
+<nav>
+  <a class="logo" href="index.html">Paper Airplane</a>
+  <ul>
+    <li><a href="index.html">Home</a></li>
+    <li><a href="page.html">Itinerary</a></li>
+    <li><a href="maldives.html">Maldives</a></li>
+    <li><a href="malaysia.html">Malaysia</a></li>
+    
+    <li><a href="./vietnam.html">Vietnam</a></li>
+  </ul>
+</nav>
+
+<div class="container">
+
+<section class="hero">
+  <img class="logo" src="./logo.png">
+  <h1>Vietnam Trip Plan (7–9 Days)</h1>
+  <p>Street food, history, natural scenery, friendly locals, and one of the safest & cheapest international trips from India.</p>
+  <div class="tags">
+    <span class="tag">From India</span>
+    <span class="tag">E-Visa</span>
+    <span class="tag">Very Budget-Friendly</span>
+    <span class="tag">₹1L Goal</span>
+  </div>
+</section>
+
+<div class="info-row">
+  <div class="info-card">
+    <h3>Flights & Entry</h3>
+    <ul>
+      <li>India → Hanoi / Ho Chi Minh City</li>
+      <li>Flight: ₹18k–₹30k</li>
+      <li>Vietnam E-Visa (easy)</li>
+    </ul>
+  </div>
+  <div class="info-card">
+    <h3>Daily Budget</h3>
+    <ul>
+      <li>Hotels: ₹1.5k–₹3k</li>
+      <li>Food: ₹800–₹1.2k</li>
+      <li>Transport: ₹800–₹1.5k</li>
+    </ul>
+  </div>
+</div>
+
+<section class="section">
+<h2>7–9 Day Itinerary</h2>
+<p class="sub">Classic safe route: Hanoi → Ha Long Bay → Hoi An → Ho Chi Minh City</p>
+
+<div class="accordion">
+
+<div class="accordion-group">
+<div class="accordion-header">
+<div class="accordion-title">Day 1 — Hanoi</div>
+<span class="accordion-badge">Arrival</span>
+<div class="accordion-icon">+</div>
+</div>
+<div class="accordion-content">
+<div class="accordion-content-inner">
+<ul>
+<li>Check-in + rest</li>
+<li>Old Quarter walk</li>
+<li>Try pho & banh mi</li>
+</ul>
+</div>
+</div>
+</div>
+
+<div class="accordion-group">
+<div class="accordion-header">
+<div class="accordion-title">Day 2 — Hanoi</div>
+<span class="accordion-badge">History</span>
+<div class="accordion-icon">+</div>
+</div>
+<div class="accordion-content">
+<div class="accordion-content-inner">
+<ul>
+<li>Ho Chi Minh Mausoleum</li>
+<li>Train Street (safe spots)</li>
+<li>Evening food tour</li>
+</ul>
+</div>
+</div>
+</div>
+
+<div class="accordion-group">
+<div class="accordion-header">
+<div class="accordion-title">Day 3 — Ha Long Bay</div>
+<span class="accordion-badge">Nature</span>
+<div class="accordion-icon">+</div>
+</div>
+<div class="accordion-content">
+<div class="accordion-content-inner">
+<ul>
+<li>Day cruise or overnight boat</li>
+<li>Kayaking & caves</li>
+<li>Seafood dinner</li>
+</ul>
+</div>
+</div>
+</div>
+
+<div class="accordion-group">
+<div class="accordion-header">
+<div class="accordion-title">Day 4 — Fly to Da Nang → Hoi An</div>
+<span class="accordion-badge">Travel</span>
+<div class="accordion-icon">+</div>
+</div>
+<div class="accordion-content">
+<div class="accordion-content-inner">
+<ul>
+<li>Short domestic flight</li>
+<li>Hoi An Ancient Town</li>
+<li>Lantern streets at night</li>
+</ul>
+</div>
+</div>
+</div>
+
+<div class="accordion-group">
+<div class="accordion-header">
+<div class="accordion-title">Day 5 — Hoi An</div>
+<span class="accordion-badge">Relax</span>
+<div class="accordion-icon">+</div>
+</div>
+<div class="accordion-content">
+<div class="accordion-content-inner">
+<ul>
+<li>An Bang Beach</li>
+<li>Cycling through rice fields</li>
+<li>Tailor shops (optional)</li>
+</ul>
+</div>
+</div>
+</div>
+
+<div class="accordion-group">
+<div class="accordion-header">
+<div class="accordion-title">Day 6 — Ho Chi Minh City</div>
+<span class="accordion-badge">City</span>
+<div class="accordion-icon">+</div>
+</div>
+<div class="accordion-content">
+<div class="accordion-content-inner">
+<ul>
+<li>War Remnants Museum</li>
+<li>Notre Dame Cathedral</li>
+<li>Ben Thanh Market</li>
+</ul>
+</div>
+</div>
+</div>
+
+<div class="accordion-group">
+<div class="accordion-header">
+<div class="accordion-title">Day 7 — Cu Chi Tunnels / Return</div>
+<span class="accordion-badge">Optional</span>
+<div class="accordion-icon">+</div>
+</div>
+<div class="accordion-content">
+<div class="accordion-content-inner">
+<p>Half-day tour or rest → Fly back to India</p>
+</div>
+</div>
+</div>
+
+</div>
+</section>
+
+<section class="section">
+<h2>Don’t Miss</h2>
+<div class="highlights">
+<div class="highlight"><span class="dot"></span> Vietnamese street food</div>
+<div class="highlight"><span class="dot"></span> Ha Long Bay cruise</div>
+<div class="highlight"><span class="dot"></span> Lantern towns</div>
+<div class="highlight"><span class="dot"></span> History museums</div>
+<div class="highlight"><span class="dot"></span> Cheap transport</div>
+<div class="highlight"><span class="dot"></span> Safe solo travel</div>
+</div>
+</section>
+
+<section class="footer-card">
+<h3>Total Estimated Cost</h3>
+<ul>
+<li>Flights: ₹18k–₹30k</li>
+<li>Stay + food: ₹30k–₹40k</li>
+<li>Transport + activities: ₹12k–₹18k</li>
+<li><strong>Total: ₹60k–₹85k per person</strong></li>
+</ul>
+</section>
+
+</div>
+
+<script>
+document.querySelectorAll('.accordion-group').forEach(group=>{
+  const header=group.querySelector('.accordion-header');
+  const icon=group.querySelector('.accordion-icon');
+  header.addEventListener('click',()=>{
+    const active=group.classList.contains('active');
+    group.parentElement.querySelectorAll('.accordion-group').forEach(g=>{
+      g.classList.remove('active');
+      g.querySelector('.accordion-icon').textContent='+';
+    });
+    if(!active){
+      group.classList.add('active');
+      icon.textContent='−';
+    }
+  });
+});
+</script>
+
+</body>
+</html>
