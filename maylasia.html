@@ -1,0 +1,669 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Malaysia Trip Itinerary — 7–10 Days</title>
+  <meta name="description" content="Professional, budget-friendly Malaysia itinerary from India with 7-day and 10-day options, costs, highlights, and daily plan." />
+  <style>
+    :root {
+      --grad-start: #cdffd8;
+      --grad-end: #94b9ff;
+      --bg: #f7f9fc;
+      --card: #ffffff;
+      --text: #1e2430;
+      --muted: #5b667a;
+      --accent: #3a6cf0;
+      --accent-2: #0f9d58;
+      --radius-lg: 24px;
+      --radius: 14px;
+      --shadow-1: 0 8px 24px rgba(16, 24, 40, 0.08);
+      --shadow-2: 0 12px 30px rgba(16, 24, 40, 0.12);
+    }
+
+    /* Base */
+    html, body {
+      height: 100%;
+    }
+    body {
+      margin: 0;
+      font-family: "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      color: var(--text);
+      background: var(--bg);
+      line-height: 1.6;
+    }
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 2rem 1.5rem;
+    }
+    h1, h2, h3 {
+      margin: 0;
+    }
+    a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    /* Rounded hero banner */
+    .hero {
+      background: linear-gradient(135deg, var(--grad-start), var(--grad-end));
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow-2);
+      padding: 3.5rem 2rem;
+      text-align: center;
+      margin-top: 2rem;
+      position: relative;
+      overflow: hidden;
+      isolation: isolate;
+      animation: fadeIn 0.8s ease-out both;
+    }
+    .hero::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(1200px 400px at 80% -10%, rgba(255,255,255,0.35), rgba(255,255,255,0) 60%);
+      z-index: -1;
+    }
+    .hero .logo {
+      width: clamp(120px, 16vw, 180px);
+      height: auto;
+      display: block;
+      margin: 0 auto 1rem;
+      filter: drop-shadow(0 10px 24px rgba(0,0,0,0.12));
+    }
+    .hero h1 {
+      font-size: clamp(2rem, 5vw, 3rem);
+      font-weight: 800;
+      letter-spacing: 0.2px;
+    }
+    .hero p {
+      max-width: 850px;
+      margin: 0.75rem auto 0;
+      color: #18202f;
+      font-weight: 500;
+    }
+    .hero .tags {
+      margin-top: 1rem;
+      display: flex;
+      gap: 0.5rem;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+    .tag {
+      background: rgba(255,255,255,0.9);
+      color: #1a2742;
+      border: 1px solid rgba(0,0,0,0.06);
+      padding: 0.4rem 0.7rem;
+      border-radius: 999px;
+      font-size: 0.9rem;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+    }
+
+    /* Info row (travel + quick costs) */
+    .info-row {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1rem;
+      margin-top: 2rem;
+    }
+    .info-card {
+      background: var(--card);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow-1);
+      padding: 1.25rem 1rem;
+    }
+    .info-card h3 {
+      font-size: 1.1rem;
+      color: var(--accent);
+      margin-bottom: 0.4rem;
+      font-weight: 700;
+    }
+    .info-card p, .info-card ul {
+      color: var(--muted);
+      margin: 0.25rem 0;
+      padding-left: 1.1rem;
+    }
+    .info-card ul {
+      list-style: disc;
+    }
+
+    /* Section headings */
+    .section {
+      margin-top: 2.5rem;
+    }
+    .section h2 {
+      font-size: 1.8rem;
+      text-align: center;
+      color: var(--accent);
+      margin-bottom: 0.75rem;
+    }
+    .section .sub {
+      text-align: center;
+      color: var(--muted);
+      margin-bottom: 1.2rem;
+    }
+
+    /* Pricing grid */
+    .pricing-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.2rem;
+    }
+    .plan {
+      background: var(--card);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow-1);
+      padding: 1.5rem;
+      transition: transform 0.25s ease;
+    }
+    .plan:hover {
+      transform: translateY(-4px);
+    }
+    .plan h3 {
+      font-size: 1.2rem;
+      margin-bottom: 0.6rem;
+      color: #222;
+    }
+    .plan ul {
+      list-style: none;
+      padding: 0;
+      margin: 0.4rem 0;
+    }
+    .plan li {
+      color: var(--muted);
+      margin: 0.4rem 0;
+    }
+    .total {
+      margin-top: 0.8rem;
+      color: var(--accent);
+      font-weight: 700;
+    }
+
+    /* Itinerary accordion */
+    .accordion {
+      max-width: 900px;
+      margin: 0 auto;
+    }
+    .accordion-group {
+      background: var(--card);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow-1);
+      overflow: hidden;
+      margin-bottom: 1rem;
+    }
+    .accordion-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      padding: 1rem 1.2rem;
+      cursor: pointer;
+      background: #fff;
+    }
+    .accordion-title {
+      font-weight: 700;
+    }
+    .accordion-badge {
+      background: #eef4ff;
+      color: var(--accent);
+      font-weight: 600;
+      border: 1px solid #dbe6ff;
+      padding: 0.2rem 0.6rem;
+      border-radius: 999px;
+      font-size: 0.85rem;
+    }
+    .accordion-icon {
+      color: var(--accent);
+      font-weight: 900;
+      font-size: 1.2rem;
+      user-select: none;
+    }
+    .accordion-content {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.45s ease, padding 0.25s ease;
+      padding: 0 1.2rem;
+      background: #fcfdff;
+      border-top: 1px solid #f0f2f7;
+    }
+    .accordion-content-inner {
+      padding: 0.8rem 0 1rem;
+      color: var(--muted);
+    }
+    .accordion-group.active .accordion-content {
+      max-height: 600px;
+      padding: 0.6rem 1.2rem 1rem;
+    }
+
+    /* Lists and callouts inside itinerary */
+    .list {
+      margin: 0.6rem 0;
+      padding-left: 1.1rem;
+    }
+    .list li {
+      margin: 0.25rem 0;
+    }
+    .callout {
+      background: #f2fbf6;
+      border: 1px solid #d7f3e2;
+      color: #265c35;
+      border-radius: 10px;
+      padding: 0.6rem 0.8rem;
+      margin: 0.6rem 0;
+      font-size: 0.95rem;
+    }
+
+    /* Highlights grid */
+    .highlights {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 0.8rem;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+    .highlight {
+      background: var(--card);
+      border-radius: 12px;
+      box-shadow: var(--shadow-1);
+      padding: 0.9rem 1rem;
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      color: var(--muted);
+    }
+    .dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: var(--accent-2);
+      box-shadow: 0 0 0 4px #e7f6ef;
+      flex: 0 0 10px;
+    }
+
+    /* Footer cost */
+    .footer-card {
+      background: var(--card);
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow-2);
+      padding: 1.4rem 1.2rem;
+      max-width: 900px;
+      margin: 1.5rem auto 3rem;
+    }
+    .footer-card h3 {
+      color: var(--accent);
+      margin-bottom: 0.6rem;
+    }
+    .grid-2 {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 0.8rem;
+    }
+    .muted {
+      color: var(--muted);
+    }
+
+    /* Animations */
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(24px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+       /* Navbar styling */
+    nav {
+      background: #3a6cf0;
+      padding: 0.8rem 1.5rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    nav .logo {
+      color: #fff;
+      font-weight: 700;
+      font-size: 1.2rem;
+      text-decoration: none;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 1.2rem;
+      margin: 0;
+      padding: 0;
+    }
+
+    nav ul li a {
+      color: #fff;
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.3s ease;
+    }
+
+    nav ul li a:hover {
+      color: #dbe6ff;
+    }
+
+  </style>
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <nav>
+    <a href="main.html" class="logo">Paper Airplane</a>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="page.html">Itinerary</a></li>
+      <li><a href="./maylasia.html">Itenerary (For Malaysia)</a></li>
+    </ul>
+  </nav>
+
+  <div class="container">
+
+    <!-- HERO -->
+    <section class="hero">
+      <img src="logo.png" alt="Travel logo" class="logo" />
+      <h1>Malaysia Trip Plan (7–10 Days)</h1>
+      <p>A perfect mix of modern cities, tropical islands, rainforests, and rich culture — affordable and beginner-friendly.</p>
+      <div class="tags">
+        <span class="tag">Start: India</span>
+        <span class="tag">Best time: Nov–Apr</span>
+        <span class="tag">Visa-free (India)</span>
+        <span class="tag">Foodie paradise</span>
+      </div>
+    </section>
+
+    <!-- INFO ROW -->
+    <div class="info-row">
+      <div class="info-card">
+        <h3>Step 1: Travel to Malaysia</h3>
+        <ul>
+          <li>Chennai → Kuala Lumpur (direct / 1-stop)</li>
+          <li>Bangalore / Mumbai → Kuala Lumpur</li>
+        </ul>
+        <p class="muted">Malaysia is visa-free for Indians (short stays) — very convenient.</p>
+        <p><strong>Expected round-trip:</strong> ₹18k–₹30k pp</p>
+      </div>
+
+      <div class="info-card">
+        <h3>Daily budget (per person)</h3>
+        <ul>
+          <li>Hotels: ₹1,800–₹3,000</li>
+          <li>Food: ₹600–₹1,200</li>
+          <li>Transport: Metro, Grab, buses</li>
+          <li>Attractions: ₹300–₹1,500</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- PRICING -->
+    <section class="section">
+      <h2>Pricing overview</h2>
+      <p class="sub">Clear cost breakdown — works for solo, friends, or family travel.</p>
+
+      <div class="pricing-grid">
+        <div class="plan">
+          <h3>✅ 7-Day Malaysia Trip</h3>
+          <ul>
+            <li><strong>Flights:</strong> ₹18k–₹30k</li>
+            <li><strong>Hotels:</strong> ₹13k–₹20k</li>
+            <li><strong>Food:</strong> ₹4k–₹7k</li>
+            <li><strong>Activities:</strong> ₹3k–₹7k</li>
+          </ul>
+          <p class="total">Estimated: ₹38k–₹60k pp</p>
+        </div>
+
+        <div class="plan">
+          <h3>✅ 10-Day Malaysia Trip</h3>
+          <ul>
+            <li><strong>Flights:</strong> ₹18k–₹30k</li>
+            <li><strong>Hotels:</strong> ₹18k–₹28k</li>
+            <li><strong>Food:</strong> ₹6k–₹10k</li>
+            <li><strong>Activities:</strong> ₹5k–₹10k</li>
+          </ul>
+          <p class="total">Estimated: ₹45k–₹75k pp</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 7 DAY ITINERARY -->
+    <section class="section">
+      <h2>7-Day Itinerary (Best for first-timers)</h2>
+
+      <div class="accordion">
+
+        <div class="accordion-group">
+          <div class="accordion-header">
+            <div class="accordion-title">Day 1 — Arrive in Kuala Lumpur</div>
+            <span class="accordion-badge">City intro</span>
+            <div class="accordion-icon">+</div>
+          </div>
+          <div class="accordion-content">
+            <div class="accordion-content-inner">
+              <ul class="list">
+                <li>Check-in near Bukit Bintang</li>
+                <li>Petronas Towers night view</li>
+                <li>KLCC Park walk</li>
+              </ul>
+              <p><strong>Food:</strong> Nasi Lemak, Satay</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="accordion-group">
+          <div class="accordion-header">
+            <div class="accordion-title">Day 2 — Kuala Lumpur Highlights</div>
+            <span class="accordion-badge">Culture & history</span>
+            <div class="accordion-icon">+</div>
+          </div>
+          <div class="accordion-content">
+            <div class="accordion-content-inner">
+              <ul class="list">
+                <li>Batu Caves</li>
+                <li>Islamic Arts Museum</li>
+                <li>Merdeka Square</li>
+                <li>Central Market</li>
+              </ul>
+              <div class="callout">Use KL Metro — cheap, clean, efficient</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="accordion-group">
+          <div class="accordion-header">
+            <div class="accordion-title">Day 3 — Genting Highlands</div>
+            <span class="accordion-badge">Hill resort</span>
+            <div class="accordion-icon">+</div>
+          </div>
+          <div class="accordion-content">
+            <div class="accordion-content-inner">
+              <ul class="list">
+                <li>Cable car ride</li>
+                <li>SkyWorlds Theme Park</li>
+                <li>Cool weather & views</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="accordion-group">
+          <div class="accordion-header">
+            <div class="accordion-title">Day 4 — Fly to Langkawi</div>
+            <span class="accordion-badge">Island time</span>
+            <div class="accordion-icon">+</div>
+          </div>
+          <div class="accordion-content">
+            <div class="accordion-content-inner">
+              <ul class="list">
+                <li>Beach relaxation</li>
+                <li>Duty-free shopping</li>
+                <li>Sunset at Pantai Cenang</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="accordion-group">
+          <div class="accordion-header">
+            <div class="accordion-title">Day 5 — Langkawi Adventure</div>
+            <span class="accordion-badge">Nature</span>
+            <div class="accordion-icon">+</div>
+          </div>
+          <div class="accordion-content">
+            <div class="accordion-content-inner">
+              <ul class="list">
+                <li>Langkawi Sky Bridge</li>
+                <li>Island hopping tour</li>
+                <li>Snorkeling (optional)</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="accordion-group">
+          <div class="accordion-header">
+            <div class="accordion-title">Day 6 — Penang</div>
+            <span class="accordion-badge">Food capital</span>
+            <div class="accordion-icon">+</div>
+          </div>
+          <div class="accordion-content">
+            <div class="accordion-content-inner">
+              <ul class="list">
+                <li>George Town street art</li>
+                <li>Kek Lok Si Temple</li>
+                <li>Clan Jetties</li>
+              </ul>
+              <p><strong>Must-eat:</strong> Char Kway Teow, Penang Laksa</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="accordion-group">
+          <div class="accordion-header">
+            <div class="accordion-title">Day 7 — Return</div>
+            <span class="accordion-badge">Departure</span>
+            <div class="accordion-icon">+</div>
+          </div>
+          <div class="accordion-content">
+            <div class="accordion-content-inner">
+              <p>Shopping → Fly back home.</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- 10 DAY EXTENSION -->
+    <section class="section">
+      <h2>10-Day Add-Ons (Worth it)</h2>
+      <p class="sub">Slow down and experience authentic Malaysia.</p>
+
+      <div class="accordion">
+        <div class="accordion-group">
+          <div class="accordion-header">
+            <div class="accordion-title">Day 8 — Cameron Highlands</div>
+            <span class="accordion-badge">Tea estates</span>
+            <div class="accordion-icon">+</div>
+          </div>
+          <div class="accordion-content">
+            <div class="accordion-content-inner">
+              <ul class="list">
+                <li>Tea plantation walk</li>
+                <li>Strawberry farms</li>
+                <li>Cool mountain stay</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="accordion-group">
+          <div class="accordion-header">
+            <div class="accordion-title">Day 9 — Malacca</div>
+            <span class="accordion-badge">Colonial history</span>
+            <div class="accordion-icon">+</div>
+          </div>
+          <div class="accordion-content">
+            <div class="accordion-content-inner">
+              <ul class="list">
+                <li>Dutch Square</li>
+                <li>Jonker Street</li>
+                <li>River cruise</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="accordion-group">
+          <div class="accordion-header">
+            <div class="accordion-title">Day 10 — Leisure + Fly Back</div>
+            <span class="accordion-badge">Wrap-up</span>
+            <div class="accordion-icon">+</div>
+          </div>
+          <div class="accordion-content">
+            <div class="accordion-content-inner">
+              <ul class="list">
+                <li>Café hopping</li>
+                <li>Final shopping</li>
+                <li>Departure</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- HIGHLIGHTS -->
+    <section class="section">
+      <h2>Don’t miss these</h2>
+      <div class="highlights">
+        <div class="highlight"><span class="dot"></span> Petronas Towers</div>
+        <div class="highlight"><span class="dot"></span> Batu Caves</div>
+        <div class="highlight"><span class="dot"></span> Langkawi beaches</div>
+        <div class="highlight"><span class="dot"></span> Penang street food</div>
+        <div class="highlight"><span class="dot"></span> Genting cable car</div>
+        <div class="highlight"><span class="dot"></span> Cameron tea estates</div>
+        <div class="highlight"><span class="dot"></span> Malaysian cuisine diversity</div>
+      </div>
+    </section>
+
+    <!-- TOTAL COST -->
+    <section class="footer-card">
+      <h3>Approx total cost (7–10 days)</h3>
+      <div class="grid-2">
+        <ul class="list muted">
+          <li>Flights: ₹18k–₹30k</li>
+          <li>Stay: ₹15k–₹25k</li>
+          <li>Food: ₹5k–₹9k</li>
+        </ul>
+        <ul class="list muted">
+          <li>Internal travel: ₹4k–₹7k</li>
+          <li>Attractions: ₹3k–₹8k</li>
+          <li><strong>Total:</strong> ≈ ₹45k–₹70k pp</li>
+        </ul>
+      </div>
+    </section>
+
+  </div>
+
+  <!-- SAME ACCORDION SCRIPT -->
+  <script>
+    document.querySelectorAll('.accordion-group').forEach(group => {
+      const header = group.querySelector('.accordion-header');
+      const icon = group.querySelector('.accordion-icon');
+      header.addEventListener('click', () => {
+        const isActive = group.classList.contains('active');
+        const parent = group.parentElement;
+        parent.querySelectorAll('.accordion-group').forEach(g => {
+          g.classList.remove('active');
+          g.querySelector('.accordion-icon').textContent = '+';
+        });
+        if (!isActive) {
+          group.classList.add('active');
+          icon.textContent = '−';
+        }
+      });
+    });
+  </script>
+
+</body>
+</html>
